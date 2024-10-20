@@ -1,0 +1,26 @@
+/*Exercise 1-1. Run the "hello, world" program on your system. Experiment with leaving
+out parts of the program, to see what error messages you get.*/
+
+/*
+//Hello.c
+
+#include <stdio.h>
+
+int main()
+{
+	printf("hello, world");
+}
+*/
+
+include <stdio.h> | compilador: [ERROR]'include' does not name a type
+#includ <stdio.h> | compilador: [ERROR]invalid preprocessing directive #includ
+								In function 'int main': [ERROR]'printf' was not declared in this scope
+#include stdio.h> | compilador: [ERROR]#include expects a "FILENAME" or <FILENAME>
+                                In function 'int main()': [ERROR]'printf' was not declared in this scope
+#include <stdioh> | compilador: [ERROR]stdioh:No such file or directory, compilation terminated
+main() | compilador: 
+int mainn() | compilador: In function 'main': undefined reference to 'WinMain' [ERROR]Id returned 1 exit status
+int main | compilador: ...
+print("hello, world"); | compilador: In function 'main': [ERROR]'print' was not declared in this scope
+....
+int main() | compilador: [ERROR]expected initializer before 'printf' [ERROR]expected declaration before '}' token

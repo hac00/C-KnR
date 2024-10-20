@@ -1,0 +1,61 @@
+//Exercsise 1-6. Verify that the expression getchar() != EOF is 0 or 1.
+
+#include <stdio.h>
+
+int main()
+{
+	int c;
+	while (c = getchar() != EOF) {
+		printf("%d\n", c);
+	printf("%d", c);
+	}
+}
+
+/*
+int main()
+{
+	int c;
+	while ((c = getchar()) != EOF)
+		if (((c = getchar()) != EOF) == 0)
+			printf ("The expression equals zero");
+		else
+			printf ("The expression equals one");
+}
+*/
+
+/*
+GPT
+#include <stdio.h>
+
+int main()
+{
+    int c;
+    char buffer[100];  // Buffer to store input characters
+    int i = 0;         // Index to keep track of the buffer
+
+    printf("Enter characters (press Enter to process, Ctrl+Z to end):\n");
+
+    // Loop until EOF is detected
+    while ((c = getchar()) != EOF) {
+        // If newline is encountered, process the whole input as a single "unit"
+        if (c == '\n') {
+            buffer[i] = '\0';  // Null-terminate the string
+            printf("You entered: %s\n", buffer);  // Print the entire buffer
+            printf("Logical value: 1\n");
+            i = 0;  // Reset the buffer index to accept new input
+        } else {
+            buffer[i++] = c;  // Store character in the buffer
+            // Ensure we don't exceed buffer size (99 characters + null terminator)
+            if (i >= sizeof(buffer) - 1) {
+                buffer[i] = '\0';
+                printf("Buffer full! Processing: %s\n", buffer);
+                i = 0;
+            }
+        }
+    }
+
+    printf("\nEOF detected. Exiting...\n");
+    return 0;
+}
+
+*/
